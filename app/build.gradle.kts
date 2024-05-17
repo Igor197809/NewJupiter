@@ -53,15 +53,6 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
     implementation("androidx.activity:activity-ktx:1.7.0")
 
-    // Jetpack Compose dependencies
-    implementation("androidx.compose.ui:ui:1.4.3")
-    implementation("androidx.compose.material:material:1.4.3")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.4.3")
-    implementation("androidx.compose.runtime:runtime-livedata:1.4.3")
-    implementation("androidx.compose.runtime:runtime-rxjava2:1.4.3")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.4.3")
-    debugImplementation("androidx.compose.ui:ui-test-manifest:1.4.3")
-
     // Google Sheets API and related dependencies
     implementation("com.google.apis:google-api-services-sheets:v4-rev20230227-2.0.0") {
         exclude(group = "org.apache.httpcomponents")
@@ -70,6 +61,7 @@ dependencies {
     implementation("com.google.api-client:google-api-client-android:1.31.5")
     implementation("com.google.android.gms:play-services-auth:20.2.0")
     implementation("com.google.api-client:google-api-client-gson:1.31.5")
+    implementation("com.google.api-client:google-api-client-jackson2:1.31.5")
 
     // Room database dependencies
     implementation("androidx.room:room-runtime:2.5.0")
