@@ -15,7 +15,7 @@ class SheetsServiceHelper(context: Context, private val spreadsheetId: String) {
 
     init {
         val credential: GoogleCredential
-        val jsonInputStream: InputStream = context.resources.openRawResource(R.raw.credentials)
+        val jsonInputStream: InputStream = context.resources.openRawResource(R.raw.jupiter_credentials)
         credential = GoogleCredential.fromStream(jsonInputStream)
             .createScoped(listOf("https://www.googleapis.com/auth/spreadsheets"))
 
