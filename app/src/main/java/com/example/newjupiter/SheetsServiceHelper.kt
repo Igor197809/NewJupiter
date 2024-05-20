@@ -27,20 +27,5 @@ class SheetsServiceHelper(context: Context, private val spreadsheetId: String) {
             .build()
     }
 
-    @Throws(IOException::class)
-    fun getData(range: String): List<List<Any>> {
-        val response: ValueRange = sheetsService.spreadsheets().values()
-            .get(spreadsheetId, range)
-            .execute()
-        return response.getValues() ?: emptyList()
-    }
-
-    @Throws(IOException::class)
-    fun updateData(range: String, values: List<List<Any>>) {
-        val body = ValueRange().setValues(values)
-        sheetsService.spreadsheets().values()
-            .update(spreadsheetId, range, body)
-            .setValueInputOption("RAW")
-            .execute()
-    }
+    // Define methods to interact with Google Sheets API
 }

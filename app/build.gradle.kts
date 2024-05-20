@@ -1,8 +1,8 @@
 plugins {
     id("com.android.application") version "8.0.2"
     id("org.jetbrains.kotlin.android") version "1.8.10"
-    id("org.jetbrains.kotlin.kapt") version "1.8.10"
     id("org.jetbrains.kotlin.plugin.serialization") version "1.8.10"
+    id("org.jetbrains.kotlin.kapt") version "1.8.10"
 }
 
 android {
@@ -56,9 +56,7 @@ dependencies {
     implementation("androidx.compose.ui:ui:1.4.3")
     implementation("androidx.compose.material:material:1.4.3")
     implementation("androidx.compose.ui:ui-tooling-preview:1.4.3")
-    implementation("androidx.compose.runtime:runtime-livedata:1.4.3")
-    implementation("androidx.compose.runtime:runtime:1.4.3")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
+    implementation("androidx.compose.foundation:foundation:1.4.3")
 
     // Google Sheets API and related dependencies
     implementation("com.google.apis:google-api-services-sheets:v4-rev20230227-2.0.0") {
