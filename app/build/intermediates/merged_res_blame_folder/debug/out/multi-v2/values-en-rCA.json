@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.newjupiter.app-mergeDebugResources-60:/values-en-rCA/values-en-rCA.xml",
+            "outputFile": "com.example.newjupiter.app-mergeDebugResources-57:/values-en-rCA/values-en-rCA.xml",
             "map": [
                 {
                     "source": "C:\\Users\\upiter\\.gradle\\caches\\transforms-4\\7860e8df431608f011ad06d1c2715c20\\transformed\\core-1.9.0\\res\\values-en-rCA\\values-en-rCA.xml",

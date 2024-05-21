@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.newjupiter.app-mergeDebugResources-60:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
+            "outputFile": "com.example.newjupiter.app-mergeDebugResources-57:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\upiter\\.gradle\\caches\\transforms-4\\2bf66529908ed8495bf3bd6863970db2\\transformed\\material-1.8.0\\res\\values-w320dp-land-v13\\values-w320dp-land-v13.xml",

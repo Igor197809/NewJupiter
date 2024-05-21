@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application") version "8.0.2"
+    id("com.android.application") version "8.4.0"
     id("org.jetbrains.kotlin.android") version "1.8.10"
     id("org.jetbrains.kotlin.plugin.serialization") version "1.8.10"
     id("org.jetbrains.kotlin.kapt") version "1.8.10"
@@ -63,7 +63,7 @@ dependencies {
         exclude(module = "guava-jdk5")
     }
     implementation("com.google.api-client:google-api-client-android:1.31.5")
-    implementation("com.google.android.gms:play-services-auth:20.2.0")
+    implementation("com.google.apis:google-api-services-sheets:v4-rev20230227-2.0.0")
     implementation("com.google.api-client:google-api-client-gson:1.31.5")
     implementation("com.google.api-client:google-api-client-jackson2:1.31.5")
 
@@ -80,4 +80,3 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.4.3")
 }
-

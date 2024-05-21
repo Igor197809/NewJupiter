@@ -10,26 +10,32 @@ class SyncWorker(context: Context, params: WorkerParameters) : CoroutineWorker(c
 
     override suspend fun doWork(): Result {
         return try {
-            val data = getData()
+            val data = withContext(Dispatchers.IO) { getData() }
             data.forEach {
-                insert(it)
+                withContext(Dispatchers.IO) { insert(it) }
             }
-            updateData()
+            withContext(Dispatchers.IO) { updateData() }
             Result.success()
         } catch (e: Exception) {
             Result.failure()
         }
     }
 
-    private suspend fun getData(): List<Data> = withContext(Dispatchers.IO) {
+    private suspend fun getData(): List<Data> {
         // Ваш код для получения данных
+        return emptyList()
     }
 
-    private suspend fun insert(data: Data) = withContext(Dispatchers.IO) {
+    private suspend fun insert(data: Data) {
         // Ваш код для вставки данных
     }
 
-    private suspend fun updateData() = withContext(Dispatchers.IO) {
+    private suspend fun updateData() {
         // Ваш код для обновления данных
     }
 }
+
+data class Data(
+    val id: Int,
+    val name: String
+)
