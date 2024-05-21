@@ -43,6 +43,11 @@ android {
     }
 }
 
+repositories {
+    google()
+    mavenCentral()
+}
+
 dependencies {
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -58,14 +63,11 @@ dependencies {
     implementation("androidx.compose.foundation:foundation:1.4.3")
 
     // Google Sheets API and related dependencies
-    implementation("com.google.api-client:google-api-client-android:1.31.5")
-    implementation("com.google.apis:google-api-services-sheets:v4-rev20230227-2.0.0") {
-        exclude(group = "org.apache.httpcomponents")
-        exclude(module = "guava-jdk5")
-    }
+    implementation("com.google.api-client:google-api-client-android:1.33.2")
+    implementation("com.google.apis:google-api-services-sheets:v4-rev20230227-2.0.0")
     implementation("com.google.android.gms:play-services-auth:20.2.0")
-    implementation("com.google.api-client:google-api-client-gson:1.31.5")
-    implementation("com.google.api-client:google-api-client-jackson2:1.31.5")
+    implementation("com.google.api-client:google-api-client-gson:1.33.2")
+    implementation("com.google.api-client:google-api-client-jackson2:1.33.2")
 
     // Room database dependencies
     implementation("androidx.room:room-runtime:2.5.0")
