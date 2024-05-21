@@ -1,32 +1,35 @@
 package com.example.newjupiter
 
 import android.content.Context
-import androidx.work.Worker
+import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
-import java.io.IOException
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
-class SyncWorker(context: Context, params: WorkerParameters) : Worker(context, params) {
+class SyncWorker(context: Context, params: WorkerParameters) : CoroutineWorker(context, params) {
 
-    override fun doWork(): Result {
-        val db = DatabaseClient.getInstance(applicationContext).appDatabase
-        val dataDao = db.dataDao()
-        val localData = dataDao.getAllData()
-
-        val sheetsHelper = SheetsServiceHelper(applicationContext, "your-spreadsheet-id")
+    override suspend fun doWork(): Result {
         return try {
-            val remoteData = sheetsHelper.getData("Sheet1!A1:B10")
-            remoteData.forEach { row ->
-                val entity = DataEntity(data = row[0].toString())
-                dataDao.insert(entity)
+            val data = getData()
+            data.forEach {
+                insert(it)
             }
-
-            val values = localData.map { listOf(it.data) }
-            sheetsHelper.updateData("Sheet1!A1", values)
-
+            updateData()
             Result.success()
-        } catch (e: IOException) {
-            e.printStackTrace()
-            Result.retry()
+        } catch (e: Exception) {
+            Result.failure()
         }
+    }
+
+    private suspend fun getData(): List<Data> = withContext(Dispatchers.IO) {
+        // Ваш код для получения данных
+    }
+
+    private suspend fun insert(data: Data) = withContext(Dispatchers.IO) {
+        // Ваш код для вставки данных
+    }
+
+    private suspend fun updateData() = withContext(Dispatchers.IO) {
+        // Ваш код для обновления данных
     }
 }
