@@ -68,6 +68,7 @@ dependencies {
     implementation("com.google.android.gms:play-services-auth:20.2.0")
     implementation("com.google.api-client:google-api-client-gson:1.30.9")
     implementation("com.google.api-client:google-api-client-jackson2:1.30.9")
+    implementation("com.google.auth:google-auth-library-oauth2-http:1.0.0")  // Зависимость для GoogleAccountCredential
 
     // Room database dependencies
     implementation("androidx.room:room-runtime:2.5.0")
