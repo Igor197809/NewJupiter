@@ -7,15 +7,19 @@ plugins {
 
 android {
     namespace = "com.example.newjupiter"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.newjupiter"
-        minSdk = 21
-        targetSdk = 33
+        minSdk = 24
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
 
     buildTypes {
@@ -24,84 +28,49 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
-
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
-
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = "1.8"
     }
-
     buildFeatures {
         compose = true
     }
-
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.1.1"
     }
-
     packaging {
         resources {
-            excludes.add("META-INF/DEPENDENCIES")
-            excludes.add("META-INF/LICENSE")
-            excludes.add("META-INF/LICENSE.txt")
-            excludes.add("META-INF/license.txt")
-            excludes.add("META-INF/NOTICE")
-            excludes.add("META-INF/NOTICE.txt")
-            excludes.add("META-INF/notice.txt")
+            excludes += "META-INF/DEPENDENCIES"
+            excludes += "META-INF/LICENSE"
+            excludes += "META-INF/LICENSE.txt"
+            excludes += "META-INF/license.txt"
+            excludes += "META-INF/NOTICE"
+            excludes += "META-INF/NOTICE.txt"
+            excludes += "META-INF/notice.txt"
+            excludes += "META-INF/ASL2.0"
         }
     }
 }
 
-repositories {
-    google()
-    mavenCentral()
-}
-
 dependencies {
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.8.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
-    implementation("androidx.activity:activity-compose:1.7.0")
-
-    // Jetpack Compose dependencies
-    implementation("androidx.compose.ui:ui:1.4.3")
-    implementation("androidx.compose.material:material:1.4.3")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.4.3")
-    implementation("androidx.compose.foundation:foundation:1.4.3")
-    implementation("androidx.compose.runtime:runtime-livedata:1.4.3")
-    implementation("androidx.compose.ui:ui-tooling:1.4.3")
-
-    // Google Sign-In dependencies
-    implementation("com.google.android.gms:play-services-auth:20.2.0")
-    implementation("com.google.api-client:google-api-client-android:1.33.2")
-    implementation("com.google.api-client:google-api-client-gson:1.33.2")
-    implementation("com.google.api-client:google-api-client-jackson2:1.33.2")
-    implementation("com.google.apis:google-api-services-sheets:v4-rev20230227-2.0.0")
-
-    // OAuth and HTTP client dependencies
-    implementation("com.google.oauth-client:google-oauth-client:1.33.2")
-    implementation("com.google.oauth-client:google-oauth-client-jetty:1.33.2")
-    implementation("com.google.http-client:google-http-client-gson:1.40.0")
-    implementation("com.google.http-client:google-http-client-android:1.40.0")
-
-    // Room database dependencies
-    implementation("androidx.room:room-runtime:2.5.0")
-    kapt("androidx.room:room-compiler:2.5.0")
-    implementation("androidx.room:room-ktx:2.5.0")
-
-    // WorkManager dependency
-    implementation("androidx.work:work-runtime-ktx:2.8.0")
-
-    // Coroutines dependency
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+    implementation("androidx.core:core-ktx:1.7.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.0")
+    implementation("androidx.activity:activity-compose:1.3.1")
+    implementation("androidx.compose.ui:ui:1.0.5")
+    implementation("androidx.compose.material:material:1.0.5")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.0.5")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+    implementation("com.google.auth:google-auth-library-oauth2-http:1.7.0")
+    implementation("com.google.api-client:google-api-client:1.30.9")
+    implementation("com.google.apis:google-api-services-sheets:v4-rev614-1.25.0")
+    implementation("com.google.android.gms:play-services-auth:19.2.0")
 
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.4.3")
+    androidTestImplementation("androidx.test.ext:junit:1.1.3")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.0.5")
+    debugImplementation("androidx.compose.ui:ui-tooling:1.0.5")
 }
