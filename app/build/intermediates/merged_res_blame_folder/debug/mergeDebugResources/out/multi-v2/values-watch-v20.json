@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.newjupiter.app-mergeDebugResources-60:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.example.newjupiter.app-mergeDebugResources-64:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
                     "source": "C:\\Users\\upiter\\.gradle\\caches\\transforms-4\\185de69f73bd07f98b24107c38e09329\\transformed\\play-services-auth-20.2.0\\res\\values-watch-v20\\values.xml",

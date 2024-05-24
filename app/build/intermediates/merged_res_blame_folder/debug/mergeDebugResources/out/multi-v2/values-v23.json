@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.newjupiter.app-mergeDebugResources-60:/values-v23/values-v23.xml",
+            "outputFile": "com.example.newjupiter.app-mergeDebugResources-64:/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "C:\\Users\\upiter\\.gradle\\caches\\transforms-4\\ea541c9c3847a7ceb4cdf7c88cff02fc\\transformed\\work-runtime-2.8.0\\res\\values-v23\\values-v23.xml",
