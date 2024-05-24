@@ -41,6 +41,18 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
     }
+
+    packaging {
+        resources {
+            excludes.add("META-INF/DEPENDENCIES")
+            excludes.add("META-INF/LICENSE")
+            excludes.add("META-INF/LICENSE.txt")
+            excludes.add("META-INF/license.txt")
+            excludes.add("META-INF/NOTICE")
+            excludes.add("META-INF/NOTICE.txt")
+            excludes.add("META-INF/notice.txt")
+        }
+    }
 }
 
 repositories {
@@ -62,13 +74,18 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview:1.4.3")
     implementation("androidx.compose.foundation:foundation:1.4.3")
 
-    // Google Sheets API and related dependencies
-    implementation("com.google.api-client:google-api-client-android:1.30.9")
-    implementation("com.google.apis:google-api-services-sheets:v4-rev581-1.25.0")
+    // Google Sign-In dependencies
     implementation("com.google.android.gms:play-services-auth:20.2.0")
-    implementation("com.google.api-client:google-api-client-gson:1.30.9")
-    implementation("com.google.api-client:google-api-client-jackson2:1.30.9")
-    implementation("com.google.auth:google-auth-library-oauth2-http:1.0.0")  // Зависимость для GoogleAccountCredential
+    implementation("com.google.api-client:google-api-client-android:1.33.2")
+    implementation("com.google.api-client:google-api-client-gson:1.33.2")
+    implementation("com.google.api-client:google-api-client-jackson2:1.33.2")
+    implementation("com.google.apis:google-api-services-sheets:v4-rev20230227-2.0.0")
+
+    // OAuth and HTTP client dependencies
+    implementation("com.google.oauth-client:google-oauth-client:1.33.2")
+    implementation("com.google.oauth-client:google-oauth-client-jetty:1.33.2")
+    implementation("com.google.http-client:google-http-client-gson:1.40.0")
+    implementation("com.google.http-client:google-http-client-android:1.40.0")
 
     // Room database dependencies
     implementation("androidx.room:room-runtime:2.5.0")
@@ -77,6 +94,9 @@ dependencies {
 
     // WorkManager dependency
     implementation("androidx.work:work-runtime-ktx:2.8.0")
+
+    // Coroutines dependency
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
